@@ -1,13 +1,18 @@
+const {format} = require('date-fns');
 const mongoose = require('mongoose');
+function formatDate(milliseconds) {
+    let date = format(milliseconds, 'yyyy-MM-dd HH:mm:ss');
+    console.log(date);
+    return date;
+  }
+ 
 
 const postSchema = new mongoose.Schema({
-    text: {
-        type: String,
-    },
+    text: String,
     user: String,
     added: {
         type: Date,
-        default: Date.now
+        default: formatDate(Date.now())
     }
 });
 

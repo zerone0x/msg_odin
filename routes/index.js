@@ -15,11 +15,17 @@ async function createPost(text, user) {
   console.log('Post saved');
 }
 
-// async function getPosts() {
-//   messagesDB = await Post.find();
-//   console.log('Posts retrieved');
-//   console.log(messagesDB)
-// }
+Post.deleteMany({text:"hello"}).then(() => {
+  console.log('Posts deleted');
+  getPosts();
+}
+).catch((err) => console.log(err));
+
+async function getPosts() {
+  messagesDB = await Post.find();
+  console.log('Posts retrieved');
+  console.log(messagesDB)
+}
 
 
 // messages.forEach((message) => {
@@ -34,6 +40,8 @@ async function createPost(text, user) {
 router.get('/', function(req, res, next) {
   Post.find().then((posts) => {
     res.render('index', { title: 'Mini Messageboard', messages: posts});
+    console.log(posts[1].added)
+    console.log(posts)
   });
 });
 
@@ -42,7 +50,7 @@ router.get('/new', function(req, res, next) {
 });
 
 router.post('/new', function(req, res, next) {
-  createPost(req.body.message, req.body.user);
+  createPost(req.body.text, req.body.user);
   // getPosts()
   // messages.push({text: req.body.message, user: req.body.user, added: new Date()});
   res.redirect('/');

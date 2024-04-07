@@ -6,3 +6,69 @@ body {
 a {
   color: #00B7FF;
 }
+
+h1 {
+  font-size: 2em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #00B7FF;
+  border-radius: 5px;
+  gap: 10px;
+}
+
+button{
+  background-color: #00B7FF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #00B7FF;
+  border-radius: 5px;
+  gap: 10px;
+}
+
+form input{
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #00B7FF;
+}
+
+/* form submit{
+  background-color: #00B7FF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+} */
+
+/* li{
+ 
+} */

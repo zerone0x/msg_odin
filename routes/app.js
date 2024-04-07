@@ -1,5 +1,7 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
-const mongoDB = 'mongodb+srv://admin:6W4HGBtRCOoLZ9Ef@cluster0.b8qebhe.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+
+const mongoDB = process.env.MONGODB_URI;
 
 async function connectToDB() {
     await mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });

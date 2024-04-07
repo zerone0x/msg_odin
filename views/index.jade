@@ -4,7 +4,9 @@ block content
   h1= title
   p Welcome to #{title}
   button(onclick='window.location="/new"') Add a message
-  ul
+  div
     each msg in messages
-      li #{msg.text} by #{msg.user} at #{msg.added}
-      
+      ul
+        li #{msg.text}
+        li by #{msg.user} at #{msg.added.toDateString() + ' ' + msg.added.toTimeString().split(' ')[0]}
+        

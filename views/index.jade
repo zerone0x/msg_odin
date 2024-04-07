@@ -3,3 +3,8 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  button(onclick='window.location="/new"') Add a message
+  ul
+    each msg in messages
+      li #{msg.text} by #{msg.user} at #{msg.added}
+      
